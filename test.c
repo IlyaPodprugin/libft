@@ -75,5 +75,11 @@ int	main(void)
     c = '\n';
     printf("%c system:	%d\n", c, isprint(200));
     printf("%c mine:	%d\n", c, ft_isprint(200));
+
+	// ft_strlen()
+	printf("\n----------------	ft_strlen()	----------------\n");
+	char *str = "0123456789";
+	printf("%s system:		%ld\n", str, strlen(str));
+	printf("%s mine:		%lld\n", str, ft_strlen(str));
 	return (0);
 }
