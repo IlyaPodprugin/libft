@@ -7,7 +7,7 @@ SRC_FILES = ft_isalpha.c \
 			ft_isascii.c \
 			ft_isprint.c \
 			ft_strlen.c \
-			test.c()
+			test.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
 all: $(NAME)
@@ -21,4 +21,4 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-.PHONY	all clean fclean
+.PHONY: all clean fclean
