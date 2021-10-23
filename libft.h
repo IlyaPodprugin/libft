@@ -24,5 +24,6 @@ int	ft_isalnum(int arg);
 int	ft_isascii(int arg);
 int	ft_isprint(int arg);
 ft_size_t	ft_strlen(char *str);
+void	*ft_memset(void* destination, int c, size_t n);
 
 #endif

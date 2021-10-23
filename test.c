@@ -81,5 +81,18 @@ int	main(void)
 	char *str = "0123456789";
 	printf("%s system:		%ld\n", str, strlen(str));
 	printf("%s mine:		%lld\n", str, ft_strlen(str));
+
+	// ft_memset()
+	printf("\n----------------	ft_memset()	----------------\n");
+	// Исходный массив
+	unsigned char src[15] = "1234567890";
+
+	// Заполняем массив символом ‘1’
+	memset (src, '1', 10);
+
+	// Вывод массива src на консоль
+	printf ("system:	src: %s\n",src);
+	ft_memset(src, '2', 10);
+	printf ("myne:	src: %s\n",src);
 	return (0);
 }

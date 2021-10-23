@@ -7,18 +7,21 @@ SRC_FILES = ft_isalpha.c \
 			ft_isascii.c \
 			ft_isprint.c \
 			ft_strlen.c \
-			test.c
+			ft_memset.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES)
-	$(CC) -o $(NAME) $(FLAGS) $(SRC_FILES) 
+$(NAME): $(OBJ_FILES) build
+	$(CC) $(FLAGS) test.c $(NAME)
+
+build:
+	ar -crs $(NAME) *.o
 
 clean:
 	rm -f $(OBJ_FILES)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) ./a.out
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean re
