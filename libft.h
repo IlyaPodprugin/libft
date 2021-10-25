@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:00:30 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/25 22:00:32 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/25 22:18:27 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int			ft_isprint(int arg);
 t_size_t	ft_strlen(char *str);
 void		*ft_memset(void *destination, int c, size_t n);
 void		ft_bzero(void *s, t_size_t n);
+void		*ft_memcpy(void *destination, const void *source, t_size_t n);
 
 #endif

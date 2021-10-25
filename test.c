@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:11:41 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/25 21:57:42 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/25 22:14:03 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,15 @@ int	main(void)
 	memset (src, '1', 10);
 	ft_bzero(src, sizeof(src));
 	printf ("myne:	src: %s\n",src);
+
+	// ft_memcpy()
+	printf("\n----------------	ft_memcpy()	----------------\n");
+	unsigned char src_2[10] = "123456";
+	unsigned char dst[10] = "";
+	memcpy (dst, src_2, 6);
+	printf ("system:	dst: %s\n", dst);
+	unsigned char dst_2[10] = "";
+	ft_memcpy (dst_2, src_2, 6);
+	printf ("myne:	dst: %s\n", dst_2);
 	return (0);
 }
