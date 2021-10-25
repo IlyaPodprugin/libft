@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:11:41 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/10 20:35:41 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/25 21:57:42 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,18 @@ int	main(void)
 
 	// ft_memset()
 	printf("\n----------------	ft_memset()	----------------\n");
-	// Исходный массив
 	unsigned char src[15] = "1234567890";
-
-	// Заполняем массив символом ‘1’
 	memset (src, '1', 10);
-
-	// Вывод массива src на консоль
 	printf ("system:	src: %s\n",src);
 	ft_memset(src, '2', 10);
+	printf ("myne:	src: %s\n",src);
+
+	// ft_bzero()
+	printf("\n----------------	ft_bzero()	----------------\n");
+	bzero(src, sizeof(src));
+	printf ("system:	src: %s\n",src);
+	memset (src, '1', 10);
+	ft_bzero(src, sizeof(src));
 	printf ("myne:	src: %s\n",src);
 	return (0);
 }
