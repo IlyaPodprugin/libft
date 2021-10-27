@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:11:41 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/25 22:14:03 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/27 16:09:09 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	main(void)
 	printf("\n----------------	ft_strlen()	----------------\n");
 	char *str = "0123456789";
 	printf("%s system:		%ld\n", str, strlen(str));
-	printf("%s mine:		%lld\n", str, ft_strlen(str));
+	printf("%s mine:		%ld\n", str, ft_strlen(str));
 
 	// ft_memset()
 	printf("\n----------------	ft_memset()	----------------\n");
@@ -100,12 +100,47 @@ int	main(void)
 
 	// ft_memcpy()
 	printf("\n----------------	ft_memcpy()	----------------\n");
-	unsigned char src_2[10] = "123456";
+	strcpy((char*)src, "123456");
 	unsigned char dst[10] = "";
-	memcpy (dst, src_2, 6);
+	memcpy (dst, src, 6);
 	printf ("system:	dst: %s\n", dst);
-	unsigned char dst_2[10] = "";
-	ft_memcpy (dst_2, src_2, 6);
-	printf ("myne:	dst: %s\n", dst_2);
+	ft_bzero(dst, sizeof(dst));
+	ft_memcpy (dst, src, 6);
+	printf ("myne:	dst: %s\n", dst);
+
+	// ft_memmove()
+	printf("\n----------------	ft_memmove()	----------------\n");
+	strcpy((char*)src, "1234567890");
+	printf ("src old: %s\n", src);
+	memmove (&src[4], &src[3], 3);
+	printf ("src new: %s\n", src);
+
+	strcpy((char*)src, "1234567890");
+	printf ("myne src old: %s\n", src);
+	ft_memmove (&src[4], &src[3], 3);
+	printf ("myne src new: %s\n", src);
+
+	// ft_strlcpy()
+	printf("\n----------------	ft_strlcpy()	----------------\n");
+	strcpy((char*)src, "1234567890");
+	char	buf[100];
+	// strlcpy(buf, (char*)src, sizeof(buf));
+	printf("src: %s\n", src);
+	printf("buf: %s\n", buf);
+
+	printf("ft_strlcpy:	%ld\n", ft_strlcpy(buf, (char*)src, sizeof(buf)));
+	printf("src: %s\n", src);
+	printf("buf: %s\n", buf);
+
+	// ft_strlcat()
+	printf("\n----------------	ft_strlcat()	----------------\n");
+	strcpy(buf, "555");
+	printf("%ld\n", ft_strlen(buf));
+	printf("buf: %s\n", buf);
+	printf("ft_strlcat:	%ld\n", ft_strlcat(buf, (char*)src, sizeof(buf)));
+	// printf("ft_strlcat:	%ld\n", strlcat(buf, (char*)src, sizeof(buf)));
+	printf("src: %s\n", src);
+	printf("buf: %s\n", buf);
+
 	return (0);
 }
