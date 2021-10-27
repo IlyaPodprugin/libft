@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 22:03:43 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/25 22:18:42 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/27 23:44:24 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *destination, const void *source, t_size_t n)
 
 	dest_ptr = destination;
 	src_ptr = source;
+	if ((!dest_ptr && !src_ptr) || !n)
+		return (dest_ptr);
 	while (n--)
 		*dest_ptr++ = *src_ptr++;
 	return (destination);

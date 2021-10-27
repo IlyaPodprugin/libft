@@ -6,13 +6,13 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 15:30:40 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/24 16:06:11 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/27 23:54:27 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *destination, int c, size_t n)
+void	*ft_memset(void *destination, int c, t_size_t n)
 {
 	unsigned char	*ptr;
 	unsigned char	sym;

@@ -6,13 +6,13 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 20:03:46 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/10 20:19:41 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/27 23:50:11 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int arg)
 {
 	if (arg >= 0 && arg <= 127)
-		return (arg);
+		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:49:54 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/26 17:03:06 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/27 21:06:48 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,17 @@
 
 void	*ft_memmove(void *destination, const void *source, t_size_t n)
 {
-	unsigned char	*arrcopy;
+	t_size_t			i;
+	unsigned char		*dst;
+	const unsigned char	*src;
 
-	ft_memcpy(arrcopy, source, n);
-	return (ft_memcpy(destination, arrcopy, n));
+	dst = (unsigned char *)destination;
+	src = (unsigned char *)source;
+	i = 0;
+	if (src < dst)
+		while (i++ < n)
+			dst[n - i] = src[n - i];
+	else
+		ft_memcpy(destination, source, n);
+	return (destination);
 }

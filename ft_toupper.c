@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 14:38:14 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/27 20:17:42 by rtinisha         ###   ########.fr       */
+/*   Created: 2021/10/27 21:19:21 by rtinisha          #+#    #+#             */
+/*   Updated: 2021/10/27 21:34:03 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size_t	ft_strlcat(char *dst, const char *src, t_size_t dstsize)
+int	ft_toupper(int str)
 {
-	t_size_t	len;
-
-	len = ft_strlen(dst);
-	ft_strlcpy(&dst[len], src, dstsize);
-	return (ft_strlen(dst));
+	if (str >= 'a' && str <= 'z')
+		str = str - 'a' + 'A';
+	return (str);
 }

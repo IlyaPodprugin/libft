@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -lbsd
+FLAGS = -Wall -Wextra -Werror
 SRC_FILES = ft_isalpha.c \
 			ft_isdigit.c \
 			ft_isalnum.c \
@@ -12,17 +12,21 @@ SRC_FILES = ft_isalpha.c \
 			ft_memcpy.c \
 			ft_memmove.c \
 			ft_strlcpy.c \
-			ft_strlcat.c
+			ft_strlcat.c \
+			ft_toupper.c \
+			ft_tolower.c \
+			ft_strchr.c \
+			ft_strrchr.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES) build
-	$(CC) $(FLAGS) test.c $(NAME)
-	make clean
+$(NAME): $(OBJ_FILES)
+	ar -crs $(NAME) *.o
 
 build:
-	ar -crs $(NAME) *.o
+	$(CC) $(FLAGS) test.c $(NAME)
+	make clean
 
 clean:
 	rm -f $(OBJ_FILES)
@@ -30,4 +34,7 @@ clean:
 fclean: clean
 	rm -f $(NAME) ./a.out
 
-.PHONY: all clean fclean re
+re:
+	make build
+
+.PHONY: all clean fclean re build

@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 20:24:25 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/10 20:40:42 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/27 23:53:15 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isprint(int arg)
 {
 	if (ft_isascii(arg))
-		if (arg > 32 && arg < 127)
-			return (arg);
+		if (arg > 31 && arg < 127)
+			return (1);
 	return (0);
 }
