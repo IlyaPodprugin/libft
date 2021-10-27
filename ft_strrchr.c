@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 23:10:23 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/27 23:26:53 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/28 00:02:56 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *str, int ch)
 	while (*char_ != ch)
 	{
 		if (char_ == str)
-			return (NULL);
+			return (0);
 		char_--;
 	}
 	return (char_);
