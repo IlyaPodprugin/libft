@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 18:40:53 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/10 18:47:59 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/28 04:04:48 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_isalnum(int arg)
 {
-	if (ft_isalpha(arg) || ft_isdigit(arg))
-		return (arg);
-	return (0);
+	return (ft_isdigit(arg) || ft_isalpha(arg));
 }

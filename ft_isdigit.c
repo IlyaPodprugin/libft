@@ -6,13 +6,11 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:12:00 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/10 18:31:12 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/10/28 03:59:00 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int arg)
 {
-	if (arg >= 48 && arg <= 57)
-		return (arg);
-	return (0);
+	return (arg >= 48 && arg <= 57);
 }
