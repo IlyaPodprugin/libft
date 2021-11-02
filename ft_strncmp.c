@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 14:38:14 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/01 11:48:32 by rtinisha         ###   ########.fr       */
+/*   Created: 2021/11/01 11:52:24 by rtinisha          #+#    #+#             */
+/*   Updated: 2021/11/01 12:19:47 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size_t	ft_strlcat(char *dst, const char *src, t_size_t dstsize)
+int	ft_strncmp(const char *str1, const char *str2, t_size_t n)
 {
-	t_size_t	len;
-
-	len = ft_strlen(dst);
-	if (len >= dstsize)
-		len = dstsize;
-	if (len < dstsize - 1 && dstsize > 0)
+	while (n)
 	{
-		ft_strlcpy(&dst[len], src, dstsize - len);
+		if (*str1 != *str2)
+			return (*(unsigned char *)str1 - *(unsigned char *)str2);
+		str2++;
+		str1++;
+		n--;
 	}
-	return (ft_strlen((char *)src) + len);
+	return (0);
 }

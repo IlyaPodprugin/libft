@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 14:38:14 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/01 11:48:32 by rtinisha         ###   ########.fr       */
+/*   Created: 2021/11/01 14:12:48 by rtinisha          #+#    #+#             */
+/*   Updated: 2021/11/01 16:06:59 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size_t	ft_strlcat(char *dst, const char *src, t_size_t dstsize)
+char	*ft_strnstr(const char *big, const char *little, t_size_t len)
 {
-	t_size_t	len;
+	unsigned char	*first_sym;
+	t_size_t		len_little;
 
-	len = ft_strlen(dst);
-	if (len >= dstsize)
-		len = dstsize;
-	if (len < dstsize - 1 && dstsize > 0)
-	{
-		ft_strlcpy(&dst[len], src, dstsize - len);
-	}
-	return (ft_strlen((char *)src) + len);
+	len_little = ft_strlen((char *)little);
+	first_sym = 0;
+	if (!len_little)
+		return ((char *)big);
+	else if (len)
+		first_sym = ft_memchr(big, *little, len - len_little);
+	if (first_sym)
+		if (!ft_memcmp(first_sym, little, len_little))
+			return ((char *)first_sym);
+	return (0);
 }

@@ -16,17 +16,21 @@ SRC_FILES = ft_isalpha.c \
 			ft_toupper.c \
 			ft_tolower.c \
 			ft_strchr.c \
-			ft_strrchr.c
+			ft_strrchr.c \
+			ft_strncmp.c \
+			ft_memchr.c \
+			ft_memcmp.c \
+			ft_strnstr.c \
+			ft_atoi.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
-	ar -crs $(NAME) *.o
+	ar -crs $(NAME) $(OBJ_FILES)
 
 build:
 	$(CC) $(FLAGS) test.c $(NAME)
-	make clean
 
 clean:
 	rm -f $(OBJ_FILES)
@@ -34,8 +38,7 @@ clean:
 fclean: clean
 	rm -f $(NAME) ./a.out libft.so
 
-re:
-	make build
+re: fclean $(NAME)
 
 so:
 	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRC_FILES)

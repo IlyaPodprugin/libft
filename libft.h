@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:00:30 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/27 23:54:33 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/01 16:36:10 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,10 @@ int			ft_toupper(int str);
 int			ft_tolower(int str);
 char		*ft_strchr(const char *str, int ch);
 char		*ft_strrchr(const char *str, int ch);
+int			ft_strncmp(const char *str1, const char *str2, t_size_t n);
+void		*ft_memchr(const void *arr, int c, t_size_t n);
+int			ft_memcmp(const void *arr1, const void *arr2, t_size_t n);
+char		*ft_strnstr(const char *big, const char *little, t_size_t len);
+int			ft_atoi(const char *str);
 
 #endif
