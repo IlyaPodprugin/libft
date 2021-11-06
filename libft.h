@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:00:30 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/02 13:34:37 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/06 16:31:52 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ char		*ft_strnstr(const char *big, const char *little, t_size_t len);
 int			ft_atoi(const char *str);
 void		*ft_calloc(t_size_t num, t_size_t size);
 char		*ft_strdup(const char *str);
+char		*ft_substr(char const *s, unsigned int start, t_size_t len);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strtrim(char const *s1, char const *set);
 
 #endif

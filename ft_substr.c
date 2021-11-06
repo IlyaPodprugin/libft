@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:42:50 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/06 15:41:12 by rtinisha         ###   ########.fr       */
+/*   Created: 2021/11/04 23:39:25 by rtinisha          #+#    #+#             */
+/*   Updated: 2021/11/06 15:05:02 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(t_size_t num, t_size_t size)
+char	*ft_substr(char const *s, unsigned int start, t_size_t len)
 {
-	char	*p;
+	char		*str;
+	t_size_t	ctr;
 
-	p = (char *)malloc(num * size);
-	if (p)
-		ft_bzero(p, num);
-	return ((void *)p);
+	ctr = 0;
+	str = (char *)malloc(len + 1 * sizeof(char));
+	if (str)
+	{
+		while (*s && ctr <= start)
+		{
+			if (ctr == start)
+			{
+				ft_strlcpy(str, s, len + 1);
+				return (str);
+			}
+			s++;
+			ctr++;
+		}
+		ft_bzero(str, len);
+		return (str);
+	}	
+	return (0);
 }
