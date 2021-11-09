@@ -6,13 +6,14 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:00:30 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/06 16:31:52 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/09 03:51:28 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef unsigned long	t_size_t;
 
@@ -42,5 +43,7 @@ char		*ft_strdup(const char *str);
 char		*ft_substr(char const *s, unsigned int start, t_size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s1, char const *set);
+char		**ft_split(char const *s, char c);
+char		*ft_itoa(int n);
 
 #endif
