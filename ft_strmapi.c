@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 01:11:59 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/10 20:33:35 by rtinisha         ###   ########.fr       */
+/*   Created: 2021/11/10 19:45:07 by rtinisha          #+#    #+#             */
+/*   Updated: 2021/11/10 20:44:32 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char		*result;
+	t_size_t	index;
+	t_size_t	len;
 
-	result = (char *)malloc(2 * sizeof(char));
+	len = ft_strlen((char *)s);
+	index = 0;
+	result = (char *)malloc(sizeof(char) * len + 1);
 	if (!result)
 		return (0);
-	if (n == -2147483648LL)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	while (s[index])
 	{
-		result[0] = '-';
-		result[1] = '\0';
-		result = ft_strjoin(result, ft_itoa(-n));
+		result[index] = f(index, s[index]);
+		index++;
 	}
-	else if (n >= 10)
-		result = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n < 10 && n >= 0)
-	{
-		result[0] = n + '0';
-		result[1] = '\0';
-	}
+	result[index] = 0;
 	return (result);
 }

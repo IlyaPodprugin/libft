@@ -10,7 +10,7 @@ SRC_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 			ft_memcmp.c ft_strnstr.c ft_atoi.c \
 			ft_calloc.c ft_strdup.c ft_substr.c \
 			ft_strjoin.c ft_strtrim.c ft_split.c \
-			ft_itoa.c
+			ft_itoa.c ft_strmapi.c ft_striteri.c 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
 all: $(NAME)

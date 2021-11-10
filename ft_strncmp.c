@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 11:52:24 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/01 12:19:47 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/10 21:45:54 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *str1, const char *str2, t_size_t n)
 {
-	while (n)
+	while (n && (*str1 != '\0' || *str2 != '\0'))
 	{
 		if (*str1 != *str2)
 			return (*(unsigned char *)str1 - *(unsigned char *)str2);

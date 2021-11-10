@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 15:39:24 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/09 00:43:34 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/10 19:27:51 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ char	**ft_split(char const *s, char c)
 		if (s[ctr] != c)
 		{
 			start = ctr;
-			while (s[ctr] != c)
+			while (s[ctr] && s[ctr] != c)
 				ctr++;
 			result[strings] = (char *)malloc((ctr - start + 1) * sizeof(char));
 			if (!result[strings])
 				return (0);
-			ft_strlcpy(result[strings], &s[start], ctr - start + 1);
+			ft_strlcpy(result[strings], s + start, ctr - start + 1);
 			strings++;
 		}
 		else
