@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:53:57 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/06 16:28:00 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/12 15:19:31 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	t_size_t	s2_len;
 	t_size_t	ctr;
 
+	if (s1 == NULL || s2 == NULL)
+		return (0);
 	ctr = 0;
 	s1_len = ft_strlen((char *)s1);
 	s2_len = ft_strlen((char *)s2);

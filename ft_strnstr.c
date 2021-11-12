@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:12:48 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/11 22:25:57 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:19:47 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 char	*ft_strnstr(const char *big, const char *little, t_size_t len)
 {
-	unsigned char	*first_sym;
-	t_size_t		len_little;
-	t_size_t		len_big;
+	t_size_t		big_;
+	t_size_t		little_;
 
-	len_little = ft_strlen((char *)little);
-	len_big = ft_strlen((char *)big);
-	first_sym = 0;
-
-	while (/* condition */)
+	if (big == NULL && little == NULL)
+		return (NULL);
+	if (!little[0])
+		return ((char *)big);
+	big_ = 0;
+	while (big[big_] && big_ < len)
 	{
-		first_sym = ft_strchr(big, little[0]);
-		if (!first_sym)
-			return (0);
-		if (first_sym + len_little)
-			if (!ft_strncmp(first_sym, little, len_little))
-				return ()
-
+		little_ = 0;
+		while (big[big_ + little_] && little[little_]
+			&& big_ + little_ < len && big[big_ + little_] == little[little_])
+			little_++;
+		if (!little[little_])
+			return ((char *)big + big_);
+		big_++;
 	}
-		return (0);
+	return (NULL);
 }
