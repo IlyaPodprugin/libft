@@ -6,13 +6,13 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:22:09 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/01 13:55:33 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:13:33 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *arr, int c, t_size_t n)
+void	*ft_memchr(const void *arr, int c, size_t n)
 {
 	while (n)
 	{

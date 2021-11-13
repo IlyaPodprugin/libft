@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 16:31:17 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/11 20:25:53 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:33:00 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*str;
-	t_size_t	end;
-	t_size_t	start;
-	t_size_t	ctr;
+	size_t		end;
+	size_t		start;
+	size_t		ctr;
 
 	if (s1 == NULL || set == NULL)
 		return ("");

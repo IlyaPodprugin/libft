@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 20:47:31 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/11 19:02:24 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:13:33 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	t_size_t	index;
+	size_t	index;
 
 	index = 0;
 	if (s != NULL)

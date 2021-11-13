@@ -6,15 +6,15 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:49:54 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/27 21:06:48 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:32:14 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *destination, const void *source, t_size_t n)
+void	*ft_memmove(void *destination, const void *source, size_t n)
 {
-	t_size_t			i;
+	size_t				i;
 	unsigned char		*dst;
 	const unsigned char	*src;
 

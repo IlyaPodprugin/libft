@@ -6,13 +6,13 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 15:39:24 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/11 19:04:50 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:32:29 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_free(char **result, t_size_t words)
+static void	ft_free(char **result, size_t words)
 {
 	while (words)
 	{
@@ -22,10 +22,10 @@ static void	ft_free(char **result, t_size_t words)
 	free(result);
 }
 
-static t_size_t	ft_count_words(const char *str, char c)
+static size_t	ft_count_words(const char *str, char c)
 {
-	t_size_t	words;
-	t_size_t	ctr;
+	size_t	words;
+	size_t	ctr;
 
 	words = 0;
 	ctr = 0;
@@ -45,9 +45,9 @@ static t_size_t	ft_count_words(const char *str, char c)
 
 static char	**ft_split_(char **result, const char *str, char c)
 {
-	t_size_t	ctr;
-	t_size_t	start;
-	t_size_t	words;
+	size_t	ctr;
+	size_t	start;
+	size_t	words;
 
 	ctr = 0;
 	start = 0;
@@ -75,7 +75,7 @@ static char	**ft_split_(char **result, const char *str, char c)
 char	**ft_split(char const *s, char c)
 {
 	char		**result;
-	t_size_t	words;
+	size_t		words;
 
 	if (s == NULL)
 		return (NULL);

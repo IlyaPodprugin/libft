@@ -1,26 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 11:52:24 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/13 18:13:33 by rtinisha         ###   ########.fr       */
+/*   Created: 2021/11/13 18:43:06 by rtinisha          #+#    #+#             */
+/*   Updated: 2021/11/13 20:42:28 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+static long int	ft_abs(long int num)
 {
-	while (n && (*str1 != '\0' || *str2 != '\0'))
+	if (num < 0)
+		return (-num);
+	return (num);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	char		str[12];
+	long int	num;
+	int			len;
+
+	num = ft_abs(n);
+	len = 0;
+	ft_bzero(str, 12);
+	if (n == 0)
 	{
-		if (*str1 != *str2)
-			return (*(unsigned char *)str1 - *(unsigned char *)str2);
-		str2++;
-		str1++;
-		n--;
+		str[0] = '0';
+		len++;
 	}
-	return (0);
+	while (num)
+	{
+		str[len++] = num % 10 + '0';
+		num = num / 10;
+	}
+	if (n < 0)
+		str[len++] = '-';
+	while (str[len - 1] && len > 0)
+	{
+		ft_putchar_fd(str[len - 1], fd);
+		len--;
+	}
 }

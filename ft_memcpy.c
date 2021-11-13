@@ -6,13 +6,13 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 22:03:43 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/10/27 23:44:24 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:13:33 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *destination, const void *source, t_size_t n)
+void	*ft_memcpy(void *destination, const void *source, size_t n)
 {
 	unsigned char		*dest_ptr;
 	const unsigned char	*src_ptr;
