@@ -31,8 +31,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-so:
-	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRC_FILES)
-	gcc -nostartfiles -shared -o libft.so $(OBJ_FILES)
-
 .PHONY: all clean fclean re build so
