@@ -6,7 +6,7 @@
 /*   By: rtinisha <rtinisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:42:50 by rtinisha          #+#    #+#             */
-/*   Updated: 2021/11/13 18:32:06 by rtinisha         ###   ########.fr       */
+/*   Updated: 2021/11/13 21:59:35 by rtinisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	char	*p;
+	void	*p;
 	size_t	mem;
 
-	if (size == 0)
-		mem = num;
-	else
-		mem = num * size;
-	p = (char *)malloc(mem);
+	if (num == 0 || size == 0)
+	{
+		num = 1;
+		size = 1;
+	}
+	mem = num * size;
+	if (!mem || size && num > 2147483647 / size)
+		return (NULL);
+	p = (void *)malloc(mem);
 	if (!p)
-		return (0);
-	ft_bzero(p, num);
-	return ((void *)p);
+		return (NULL);
+	ft_bzero(p, mem);
+	return (p);
 }
