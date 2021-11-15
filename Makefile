@@ -1,7 +1,7 @@
 NAME = libft.a
-CC = gcc
+CC = cc
 HEADER = libft.h
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -MMD
 SRC_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 			ft_isascii.c ft_isprint.c ft_strlen.c \
 			ft_memset.c ft_bzero.c ft_memcpy.c \
@@ -14,19 +14,25 @@ SRC_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 			ft_itoa.c ft_strmapi.c ft_striteri.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 			ft_putnbr_fd.c
-OBJ_FILES = $(SRC_FILES:.c=.o)
+OBJ_FILES = $(patsubst %.c,%.o,$(SRC_FILES))
+D_FILES = $(patsubst %.c,%.d,$(SRC_FILES))
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES) $(HEADER) 
-	ar -crs $(NAME) $(OBJ_FILES) $?
+$(NAME): $(OBJ_FILES) $(HEADER)
+	ar -crs $(NAME) $?
+
+%.o : %.c
+	$(CC) $(FLAGS) -c $< -o $@ -MD
 
 clean:
-	rm -f $(OBJ_FILES)
+	rm -f $(OBJ_FILES) $(D_FILES)
 
 fclean: clean
-	rm -f $(NAME) ./a.out libft.so
+	rm -f $(NAME)
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re build so
+.PHONY: all clean fclean re
+
+-include $(D_FILES)
